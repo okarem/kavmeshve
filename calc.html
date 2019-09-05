@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="ss1.css">
+
+
+
+<script>
+var t=0;
+function clearscrn() {
+	document.getElementById("screen").innerHTML = "0";
+	document.getElementById("op1").innerHTML = "0";
+	document.getElementById("op2").innerHTML = "0";
+}
+
+function numInput(num) {
+var number=document.getElementById("screen").innerHTML;
+if(number=="0"||number=="oi!") number="";
+  document.getElementById("screen").innerHTML = number+num.toString();
+}
+function operation(op){
+var res1=document.getElementById("screen").innerHTML;
+	if(document.getElementById("op2").innerHTML != "0"){
+		res1=calculate(document.getElementById("op1").innerHTML,op,document.getElementById("screen").innerHTML);
+	}
+	document.getElementById("op2").innerHTML = op;
+	document.getElementById("op1").innerHTML = res1;
+	document.getElementById("screen").innerHTML = "0";
+}
+
+function equals(){
+var res1= calculate(document.getElementById("op1").innerHTML,document.getElementById("op2").innerHTML,document.getElementById("screen").innerHTML);
+document.getElementById("screen").innerHTML = res1;
+	document.getElementById("op1").innerHTML = "0";
+	document.getElementById("op2").innerHTML = "0";
+}
+
+function calculate(t1,op,t2){
+var num1= parseInt(t1);
+var num2= parseInt(t2);
+	switch(op){
+		case "0":
+			return (num1+num2).toString();
+		break;
+		case "+":
+			return (num1+num2).toString();
+		break;
+		case "-":
+			return (num1-num2).toString();
+		break;
+		case "*":
+			return (num1*num2).toString();
+		break;
+		case "/":
+			if(num2==0)return "oi!";
+			return (Math.floor((num1/num2))).toString();
+		break;
+	}
+
+}
+
+</script>
+
+
+
+
+	<body>
+	<form name="calc">
+<div class="plastics">
+<label id="op1" style="font-size: 0px;">0</label>
+<label id="op2" style="font-size: 0px;">0</label>	
+<div class="screen-digits"><label id="screen">0</label>
+</div>
+<div class="buttons">
+<input type="button" value="7"  onclick="numInput(7)" >
+<input type="button" value="8"  onclick="numInput(8)" >
+<input type="button" value="9"  onclick="numInput(9)" >
+<input type="button" value="/" onclick="operation('/')" >
+<br><input type="button" value="4"  onclick="numInput(4)" >
+<input type="button" value="5"  onclick="numInput(5)" >
+<input type="button" value="6"  onclick="numInput(6)" >
+<input type="button" value="*" onclick="operation('*')" >
+<br><input type="button" value="1"  onclick="numInput(1)" >
+<input type="button" value="2"  onclick="numInput(2)" >
+<input type="button" value="3"  onclick="numInput(3)" >
+<input type="button" value="-" onclick="operation('-')" >
+<br><input type="button" value="0"  onclick="numInput(0)" >
+<input type="button" value="C" onclick="clearscrn()" >
+<input type="button" value="=" onclick="equals()">
+<input type="button" value="+" onclick="operation('+')">
+
+</div>
+</div>
+	</form>
+	
+	
+	</body>
+</html>
+
+
+
+<!--
+  
+  <input style="width:100%;" name="screen"> 
+
+
+
+
+
+
+  
+  -->

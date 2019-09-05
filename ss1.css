@@ -1,0 +1,23 @@
+[type="button"] {
+	color: yellow;
+	background-color:red;
+	margin: 2px;
+	width: 67px;
+}
+.screen-digits {
+	margin: 20px;
+	width: 300px;
+	font-size: 60px;
+	background-color: silver;
+}
+.buttons {
+	margin: 20px;
+	width: 300px;
+	
+}
+.plastics {
+	width:340px;
+	padding:3px;
+	
+	background-color:blue;
+}

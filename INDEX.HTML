@@ -1,0 +1,27 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+</head>
+<body>
+
+
+<h1>Congratulations! it's a Calculator!</h1>
+<div class='calc'>
+	<div id='screen'>
+	<form>
+		<input type='number' id='screen_numbers' name='screen_numbers' ><br>
+	</form>
+	</div>
+	<div id='buttons'>
+		<button onclick='showOnBar("screen_numbers","1")' type='button'>1</button><button type='button'>2</button><button type='button'>3</button><button type='button'>/</button><br>
+
+</div>
+<script>
+function showOnBar(bar,digit){
+	document.getElementById(bar).value = "777";
+	
+}
+</script>
+</body>
+</html> 
