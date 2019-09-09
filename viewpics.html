@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/javascript">
+	var url_string = window.location.href;
+	var url = new URL(url_string);
+	var c = url.searchParams.get("c");
+	document.title=url.searchParams.get("title");
+	document.getElementById("spn").innerHTML=c;
+</script>
+
+
+	<title></title>
+</head>
+<body>
+	<span id="spn"></span>
+</body>
+</html>
